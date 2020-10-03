@@ -1,0 +1,16 @@
+:
+import pandas as pd
+import numpy as np
+from sklearn.decomposition import PCA
+
+df_train = pd.read_csv('train.csv')
+print('Size of training set: {} rows and {} columns'
+      .format(*df_train.shape))
+      y_train = df_train['y'].values
+In [6]:
+cols = [c for c in df_train.columns if 'X' in c]
+print('Number of features: {}'.format(len(cols)))
+Number of features: 376
+In [7]:
+print('Feature types:')
+df_train[cols].dtypes.value_counts()
